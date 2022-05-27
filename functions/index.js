@@ -54,10 +54,11 @@
 
 var speak = function (what){
         console.log(what)
-        console.log(this.normal)
+        console.log(this)
         // console.log(this)
     }
     
     var saySomething = {normal: 'mew', love: 'purr'}
     speak.call(saySomething,'testing')
     
+// speak('hello')
