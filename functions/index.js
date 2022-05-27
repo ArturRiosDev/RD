@@ -62,3 +62,11 @@ var speak = function (what){
     speak.call(saySomething,'testing')
     
 // speak('hello')
+function Light() {};
+Light.prototype.color = 'red';
+
+function Bulb() {};
+Bulb.prototype = new Light();
+
+Light.prototype.color = 'blue';
+console.log(new Bulb().color);
