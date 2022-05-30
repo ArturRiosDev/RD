@@ -31,3 +31,4 @@ const test2 = async (url,obj)=>{
 
 //declaring a web worker 
 const worker = new Worker()
+//new comment
