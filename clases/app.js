@@ -4,7 +4,7 @@
         this.engine = engine
         this.color = color
     }
-
+    debugger
     carStats(){
         return ` This car has ${this.doors} doors, a ${this.engine} engine and a beautiful ${this.color} color!`
     }
