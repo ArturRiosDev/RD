@@ -157,8 +157,38 @@ const myPromise = class{
           },1000)
           resolve(4)
       })
-   }  
+   }
 }
 let promise = new myPromise()
 
-promise.syncThen().then((res)=> console.log(res))
+// promise.syncThen().then((res)=> console.log(res))
+
+// class MyPromise extends Promise {
+//   syncThen(fn) {
+//     const val = fn();
+//     return this.then((_) => val);
+//   }
+// }
+
+// const myP = new MyPromise((res) => {
+//   console.log(1);
+//   res();
+// })
+//   .syncThen((_) => console.log(2))
+//   .then((_) => console.log(3));
+// console.log(4);
+
+class MyPromise extends Promise{ //se crea una clase , que extiende del objeto promise 
+    metodoDeLaClase(funcion){ //se genera un metodo de clase que recibe como parametro una funcion
+      funcion() 
+      return this.then() //al final retorna el objeto promise en su propiedad then para su resolucion
+    }
+}
+
+const myP = new MyPromise((res,reject)=>{ //se genera una instancia de MyPromise 
+      console.log(1)  //se manda a llamar el primer console log
+      res(3)   //se manda a llamar la resolucion vacia 
+})
+.metodoDeLaClase(()=>console.log(2)) //se manda a llamar el primer metodo de la clase MyPromise
+.then((res)=> console.log(res)) //se manda a llamar la resolucion de la promesa 
+console.log(4) //se manda a imprimir un simple console.log
