@@ -147,48 +147,33 @@
 // console.log(f1()) //answer: 4, because sum represents the returned value of function f2 and c and b are in the scope of function f1
 
 //HOME TASK
-const myPromise = class{
-  syncThen(){
-    console.log(1)
-    console.log(2)
-      return new Promise((resolve,reject)=>{
-          setTimeout(()=>{
-            console.log(3)
-          },1000)
-          resolve(4)
-      })
-   }
-}
-let promise = new myPromise()
+// const myPromise = class{
+//   syncThen(){
+//     console.log(1)
+//     console.log(2)
+//       return new Promise((resolve,reject)=>{
+//           setTimeout(()=>{
+//             console.log(3)
+//           },1000)
+//           resolve(4)
+//       })
+//    }
+// }
+// let promise = new myPromise()
 
 // promise.syncThen().then((res)=> console.log(res))
 
-// class MyPromise extends Promise {
-//   syncThen(fn) {
-//     const val = fn();
-//     return this.then((_) => val);
-//   }
-// }
-
-// const myP = new MyPromise((res) => {
-//   console.log(1);
-//   res();
-// })
-//   .syncThen((_) => console.log(2))
-//   .then((_) => console.log(3));
-// console.log(4);
-
-class MyPromise extends Promise{ //se crea una clase , que extiende del objeto promise 
-    metodoDeLaClase(funcion){ //se genera un metodo de clase que recibe como parametro una funcion
+class MyPromise extends Promise{ 
+    metodoDeLaClase(funcion){ 
       funcion() 
-      return this.then() //al final retorna el objeto promise en su propiedad then para su resolucion
+      return this.then()
     }
 }
 
-const myP = new MyPromise((res,reject)=>{ //se genera una instancia de MyPromise 
-      console.log(1)  //se manda a llamar el primer console log
-      res(3)   //se manda a llamar la resolucion vacia 
+const myP = new MyPromise((res,reject)=>{     
+    console.log(1)  
+    res(3)   
 })
-.metodoDeLaClase(()=>console.log(2)) //se manda a llamar el primer metodo de la clase MyPromise
-.then((res)=> console.log(res)) //se manda a llamar la resolucion de la promesa 
-console.log(4) //se manda a imprimir un simple console.log
+.metodoDeLaClase(()=>console.log(2))
+.then((res)=> console.log(res))
+console.log(4) 

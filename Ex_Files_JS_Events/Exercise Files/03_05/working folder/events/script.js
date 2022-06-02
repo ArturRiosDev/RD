@@ -5,14 +5,25 @@ jukebox.addEventListener('click', function(e) {
 
   if (songPlaying) {
 
-    if (songPlaying.paused) {
-      songPlaying.play();
-      e.target.id = 'playing';
-    } else {
-      songPlaying.pause();
-      e.target.id = 'paused';
-    }
+    if(songName=== songPlaying.getAttribute('src')){
 
+      if (songPlaying.paused) {
+        songPlaying.play();
+        e.target.id = 'playing';
+      } else {
+        songPlaying.pause();
+        e.target.id = 'paused';
+      }
+    }else{
+        songPlaying.src = songName
+        songPlaying.play()
+        if(document.querySelector('#playing')){
+        document.querySelector('#playing').id = ''
+        }else{
+          document.querySelector('#paused').id = ''
+        }
+        e.target.id = 'playing'
+      }
 
   } else {
     var audioPlayer = document.createElement('audio');
