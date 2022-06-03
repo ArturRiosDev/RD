@@ -1,3 +1,6 @@
+let myButton = document.querySelector('#loadButton')
+myButton.onclick = loadAJAX
+
 function loadAJAX(){
 	var request;
 if (window.XMLHttpRequest) {
