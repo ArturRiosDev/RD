@@ -54,7 +54,7 @@
 
 var speak = function (what){
         console.log(what)
-        console.log(this)
+        console.log(this.normal)
         // console.log(this)
     }
     

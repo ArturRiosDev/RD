@@ -1,6 +1,4 @@
-const sayHello = name => console.log(`Hello ${name}`)
 
-sayHello('artur')
 
 
 const x  = 5
