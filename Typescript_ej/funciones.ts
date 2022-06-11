@@ -6,6 +6,11 @@ let otroNumero:number
 let cualquiera: any
 cualquiera = 'cadena'
 cualquiera= 10
+let otro = 'hola'
+let nuevo = ['hola',1,'nuevo']
+
+
+
 
 //variables constantes
 const PI= 3.14

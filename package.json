@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./Ex_Files_NodeJS_SocketIO/CH2/02_03/end/index.js",
+    "dev": "webpack-dev-server --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,11 +21,15 @@
   "devDependencies": {
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-immutable": "^1.0.0",
-    "eslint-plugin-import": "^2.26.0"
+    "eslint-plugin-import": "^2.26.0",
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.7.3"
   },
   "dependencies": {
     "express": "^4.18.1",
     "nodemon": "^2.0.16",
-    "socket.io": "^4.5.1"
+    "socket.io": "^4.5.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.2"
   }
 }
