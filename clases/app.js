@@ -1,4 +1,8 @@
  class Car {
+    doors
+    engine
+    color
+
     constructor(doors, engine, color){
         this.doors= doors
         this.engine = engine
